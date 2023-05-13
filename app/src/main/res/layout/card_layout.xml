@@ -50,18 +50,7 @@
             app:layout_constraintLeft_toRightOf="@+id/item_image"
             >
 
-
         </TextView>
-
-
-
-
-
-
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

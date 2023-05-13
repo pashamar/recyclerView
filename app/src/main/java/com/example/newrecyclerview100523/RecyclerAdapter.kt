@@ -5,13 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter(notesList: ArrayList<String>) :RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
 
     private var titles = arrayOf("Chapter One", "Chapter Two", "Chapter Three", "Chapter Four", "Chapter Five", "Chapter Six", "Chapter Seven", "Chapter Eight")
 
-    private var details = arrayOf("Item one details", "Item two details", "Item three details", "Item four details", "Item five details", "Item six details", "Item seven details")
+    private var details = arrayOf("Item one details", "Item two details", "Item three details", "Item four details", "Item five details", "Item six details", "Item seven details", "Item eight details")
 
     private val images = intArrayOf(R.drawable.android, R.drawable.android, R.drawable.android, R.drawable.android, R.drawable.android, R.drawable.android, R.drawable.android, R.drawable.android)
 
@@ -40,6 +41,14 @@ class RecyclerAdapter(notesList: ArrayList<String>) :RecyclerView.Adapter<Recycl
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
             itemDetail = itemView.findViewById(R.id.item_detail)
+
+            itemView.setOnClickListener {
+                val position: Int = adapterPosition
+
+
+                Toast.makeText(itemView.context, "вы нажали на ${titles[position]}", Toast.LENGTH_LONG).show()
+
+            }
         }
         }
 
